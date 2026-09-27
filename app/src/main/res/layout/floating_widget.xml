@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Disk Section -->
+    <TextView android:id="@+id/tvFreeSpace" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@android:color/white" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+    <!-- RAM Section -->
+    <TextView android:id="@+id/tvFreeRam" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="#00FF00" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphRamView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+    <!-- CPU Section -->
+    <TextView android:id="@+id/tvCpuLoad" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="#33B5E5" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphCpuView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+    <!-- Battery Temp Section -->
+    <TextView android:id="@+id/tvBatteryTemp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="#FFBB33" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphBatteryView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+    <!-- Battery Current Section -->
+    <TextView android:id="@+id/tvBatteryCurrent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="#FF4444" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphCurrentView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+    <!-- Network Speed Section -->
+    <TextView android:id="@+id/tvNetSpeed" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="#AA66CC" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphNetView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+    <!-- Ping Section -->
+    <TextView android:id="@+id/tvPing" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="#AA66CC" android:textSize="12sp" android:textStyle="bold" />
+    <com.kotekompotek.resourcemonitor.SpaceGraphView android:id="@+id/graphPingView" android:layout_width="match_parent" android:layout_height="30dp" android:layout_marginTop="2dp" />
+
+</LinearLayout>

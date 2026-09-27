@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Resource monitor</title>
+<style>
+body { font-family: sans-serif; max-width: 720px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #222; }
+h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 1.5em; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 0.4em 0.6em; text-align: left; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — Resource monitor (<code>com.kotekompotek.resourcemonitor</code>)</h1>
+<p>Effective date: 2026-09-26. Contact: [REPLACE WITH SUPPORT EMAIL].</p>
+
+<h2>1. What this app does</h2>
+<p>Resource monitor shows a small movable on-screen widget with your device's
+CPU frequency, RAM, disk space, battery temperature, battery current,
+network speed and ping latency, plus history graphs.</p>
+
+<h2>2. Data we collect: none</h2>
+<ul>
+<li>All readings (CPU, RAM, disk, battery, traffic counters) are obtained from
+Android system APIs and displayed <strong>only on your device</strong>. They are never
+transmitted, stored on servers, shared, or sold.</li>
+<li>The Ping feature sends <strong>one ICMP echo request per 5 seconds to 8.8.8.8</strong>
+to measure latency. The request contains no personal data.</li>
+<li>Settings (which metrics are shown, precision, widget size) are stored
+<strong>only in this device's app preferences</strong>.</li>
+<li>The app has <strong>no accounts, no analytics, no advertising, no third-party SDKs</strong>.</li>
+</ul>
+
+<h2>3. Permissions and why they are needed</h2>
+<table>
+<tr><th>Permission</th><th>Purpose</th></tr>
+<tr><td>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>)</td><td>Core feature: the movable monitor widget. Requested only after an in-app explanation; revocable anytime in system settings.</td></tr>
+<tr><td>Internet / network state (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Measuring traffic speed and ping latency.</td></tr>
+<tr><td>Foreground service, special use (<code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_SPECIAL_USE</code>)</td><td>Keeping the monitor running with a persistent, user-visible notification that can stop it.</td></tr>
+<tr><td>Notifications (<code>POST_NOTIFICATIONS</code>, Android 13+)</td><td>Showing that persistent notification. The monitor works even if you deny it.</td></tr>
+</table>
+
+<h2>4. Data retention and deletion</h2>
+<p>No personal data leaves the device, so there is nothing to retain or delete.
+Uninstalling the app removes its on-device settings.</p>
+
+<h2>5. Children</h2>
+<p>The app is a general-utility tool, not directed at children, and collects
+no data from anyone.</p>
+
+<h2>6. Changes</h2>
+<p>Material changes to this policy will be reflected in the app's store listing
+before they take effect.</p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+def keystoreProps = new Properties()
+def keystorePropsFile = rootProject.file('local.properties')
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+// Release keystore must NEVER be committed: its path and passwords live only
+// in local.properties (RELEASE_STORE_FILE, RELEASE_STORE_PASSWORD,
+// RELEASE_KEY_ALIAS, RELEASE_KEY_PASSWORD - see README).
+// Without them the release build stays unsigned — sign it via Play App Signing.
+def releaseStorePath = keystoreProps.getProperty('RELEASE_STORE_FILE', 'release.keystore')
+def hasReleaseKey = file(releaseStorePath).exists() &&
+        keystoreProps.getProperty('RELEASE_STORE_PASSWORD') != null
+
+android {
+    namespace 'com.kotekompotek.resourcemonitor'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.kotekompotek.resourcemonitor"
+        minSdk 21
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            if (hasReleaseKey) {
+                storeFile file(releaseStorePath)
+                storePassword keystoreProps.getProperty('RELEASE_STORE_PASSWORD')
+                keyAlias keystoreProps.getProperty('RELEASE_KEY_ALIAS')
+                keyPassword keystoreProps.getProperty('RELEASE_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseKey) signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                // Исключаем старый пакет, чтобы он не вызывал ошибок компиляции
+                exclude 'com/kotekompotek/spacemonitor/**'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}

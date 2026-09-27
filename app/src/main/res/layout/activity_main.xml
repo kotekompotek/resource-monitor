@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Monitor"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Settings"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Disk Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowDisk" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="Disk" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecDiskMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecDisk" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="2" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecDiskPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevDisk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrDisk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/rgDiskDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbDiskValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Val" />
+            <RadioButton android:id="@+id/rbDiskPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="%" />
+            <RadioButton android:id="@+id/rbDiskBoth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Both" />
+        </RadioGroup>
+
+        <!-- RAM Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowRam" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="RAM" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecRamMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecRam" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="2" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecRamPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevRam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrRam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/rgRamDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbRamValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Val" />
+            <RadioButton android:id="@+id/rbRamPercent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="%" />
+            <RadioButton android:id="@+id/rbRamBoth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Both" />
+        </RadioGroup>
+
+        <!-- CPU Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowCpu" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="CPU" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecCpuMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecCpu" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="1" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecCpuPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevCpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrCpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+
+        <!-- Battery Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowBattery" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="Temp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecBatteryMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecBattery" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="1" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecBatteryPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevBattery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrBattery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+
+        <!-- Current Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowCurrent" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="Current" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecCurrentMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecCurrent" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="3" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecCurrentPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevCurrent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrCurrent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+
+        <!-- Net Speed Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowNet" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="Net" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecNetMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecNet" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="2" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecNetPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevNet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrNet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+
+        <!-- Ping Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <CheckBox android:id="@+id/cbShowPing" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:checked="true" android:text="Ping" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pr:" android:textSize="10sp" />
+            <Button android:id="@+id/btnPrecPingMinus" android:layout_width="30dp" android:layout_height="30dp" android:text="-" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <EditText android:id="@+id/etPrecPing" android:layout_width="30dp" android:layout_height="wrap_content" android:inputType="number" android:text="0" android:textSize="12sp" android:gravity="center" />
+            <Button android:id="@+id/btnPrecPingPlus" android:layout_width="30dp" android:layout_height="30dp" android:text="+" android:padding="0dp" android:minWidth="0dp" android:minHeight="0dp" android:textSize="10sp" />
+            <CheckBox android:id="@+id/cbRevPing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rev" android:textSize="12sp" />
+            <CheckBox android:id="@+id/cbGrPing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gr" android:textSize="12sp" android:checked="true" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#444" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+
+        <!-- Scale Control -->
+        <TextView
+            android:id="@+id/tvScaleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Widget Scale: 1.0x" />
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+            <Button android:id="@+id/btnScaleMinus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="-" />
+            <SeekBar
+                android:id="@+id/sbScale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="200"
+                android:progress="100" />
+            <Button android:id="@+id/btnScalePlus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="+" />
+        </LinearLayout>
+
+        <!-- Width Control -->
+        <TextView
+            android:id="@+id/tvWidthLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Widget Width: 150dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnWidthMinus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="-" />
+            <SeekBar
+                android:id="@+id/sbWidth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="400"
+                android:progress="150" />
+            <Button android:id="@+id/btnWidthPlus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="+" />
+        </LinearLayout>
+
+        <!-- Height Control -->
+        <TextView
+            android:id="@+id/tvHeightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Graph Height: 30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnHeightMinus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="-" />
+            <SeekBar
+                android:id="@+id/sbHeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="200"
+                android:progress="30" />
+            <Button android:id="@+id/btnHeightPlus" android:layout_width="48dp" android:layout_height="wrap_content" android:text="+" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnPrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Privacy Policy" />
+
+    </LinearLayout>
+</ScrollView>

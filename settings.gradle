@@ -1,0 +1,2 @@
+rootProject.name = "Resource monitor"
+include ':app'
