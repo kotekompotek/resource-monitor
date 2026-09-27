@@ -1,0 +1,58 @@
+# Fastlane: Resource monitor (Android)
+#
+# IMPORTANT: the very first build of a new app must be uploaded MANUALLY
+# via Play Console in the browser (see BROWSER_GUIDE.md). Only after that
+# can these lanes upload updates automatically.
+#
+# Setup (once):
+#   1. Install Ruby (https://rubyinstaller.org on Windows), then:
+#        gem install fastlane -NV
+#   2. Create a service account with Google Play Android Developer API access
+#      (steps in BROWSER_GUIDE.md, section 6) and save its JSON key as
+#      fastlane/play-service-account.json (NEVER commit it - see .gitignore).
+#      Alternative: set env var SUPPLY_JSON_KEY to the key file path.
+#   3. Run: fastlane internal
+
+default_platform(:android)
+
+platform :android do
+  desc "Build signed release AAB only"
+  lane :build do
+    gradle(task: "bundle", build_type: "Release")
+  end
+
+  desc "Build release AAB and upload to the internal track (binaries only)"
+  lane :internal do
+    gradle(task: "bundle", build_type: "Release")
+    upload_to_play_store(
+      track: "internal",
+      aab: lane_context[SharedValues::GRADLE_AAB_OUTPUT_PATH],
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Upload store metadata and images only (no binaries)"
+  lane :metadata do
+    upload_to_play_store(
+      skip_upload_aab: true,
+      skip_upload_apk: true
+    )
+  end
+
+  desc "Promote the current internal release to production with staged rollout"
+  lane :promote do
+    upload_to_play_store(
+      track: "internal",
+      track_promote_to: "production",
+      rollout: "0.2",
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_aab: true,
+      skip_upload_apk: true,
+      skip_upload_changelogs: false
+    )
+  end
+end

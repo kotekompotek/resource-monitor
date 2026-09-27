@@ -1,0 +1,5 @@
+# Service-account key for Google Play Developer API.
+# Either drop the JSON key here as play-service-account.json (git-ignored),
+# or point SUPPLY_JSON_KEY env var at it.
+json_key_file(ENV.fetch("SUPPLY_JSON_KEY", File.expand_path("play-service-account.json", __dir__)))
+package_name("com.kotekompotek.resourcemonitor")

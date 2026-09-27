@@ -10,6 +10,10 @@ app/build/
 *.keystore
 *.jks
 
+# Fastlane service-account key and reports — never commit
+fastlane/play-service-account.json
+fastlane/report.xml
+
 # OS
 .DS_Store
 Thumbs.db

@@ -1,0 +1,17 @@
+Resource Monitor shows a small movable widget on top of other apps with live
+readings of your device: CPU frequency, free RAM, disk space, battery
+temperature, battery current, network speed and ping latency, each with
+its own history graph.
+
+- Choose which metrics to show, number precision, graph direction and size
+- Widget width, graph height and overall scale are adjustable
+- Runs as a user-visible foreground service with a persistent notification
+  that can stop it at any time - or hold the widget in the red zone
+- The app explains the "Display over other apps" permission before asking
+  for it, never pretends to be the system or another app, and does not
+  intercept taps in other apps
+
+Privacy: everything is measured on your device and stays there. No accounts,
+no analytics, no ads, no third-party SDKs. Ping sends one ICMP echo per
+5 seconds to 8.8.8.8 to measure latency; it carries no personal data.
+Full policy: https://kotekompotek.github.io/resource-monitor/privacy-policy.html
